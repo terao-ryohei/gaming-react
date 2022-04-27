@@ -43,6 +43,7 @@ module.exports = {
     'import/no-default-export': 'error',
     'import/prefer-default-export': 'off',
     'react/require-default-props': 'off',
+    'react/no-array-index-key': 'off',
   },
   ignorePatterns: ['.eslintrc.*', 'vite.config.*', 'prettierrc.*'],
   overrides: [

@@ -43,6 +43,7 @@ export const Game: React.MemoExoticComponent<() => JSX.Element> = React.memo(
               <>
                 {DEFAULT_ENEMY_LEFT().map((left: number, leftIndex: number) => (
                   <Enemy
+                    key={`enemy${topIndex}-${leftIndex}`}
                     alive={aliveEnemy[topIndex][leftIndex]}
                     top={top}
                     left={left}
