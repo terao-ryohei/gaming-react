@@ -18,12 +18,13 @@ type RowProps = {
   position?: 'absolute' | 'relative' | undefined;
 };
 
-export const Row = React.memo((props: RowProps) => {
-  const { position, children, className } = props;
+export const Row: React.MemoExoticComponent<(props: RowProps) => JSX.Element> =
+  React.memo((props: RowProps) => {
+    const { position, children, className } = props;
 
-  return (
-    <StyledRow className={`Row ${className}`} position={position}>
-      {children}
-    </StyledRow>
-  );
-});
+    return (
+      <StyledRow className={`Row ${className}`} position={position}>
+        {children}
+      </StyledRow>
+    );
+  });
