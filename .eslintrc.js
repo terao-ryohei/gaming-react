@@ -44,6 +44,7 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'react/require-default-props': 'off',
     'react/no-array-index-key': 'off',
+    '@typescript-eslint/no-unused-vars': 'warn',
   },
   ignorePatterns: ['.eslintrc.*', 'vite.config.*', 'prettierrc.*'],
   overrides: [

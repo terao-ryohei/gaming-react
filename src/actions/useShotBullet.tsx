@@ -76,9 +76,11 @@ export const useShotBullet = (): {
    */
   useEffect(() => {
     if (shootFlag.current) {
-      const timeout = setTimeout(() => {
-        setBulletTop((current) => current - BULLET_MOVE_RANGE);
-      }, 60);
+      // TODO: 4.弾を動かす
+
+      // const timeout = setTimeout(() => {
+      //   setBulletTop((current) => current - BULLET_MOVE_RANGE);
+      // }, 60);
 
       if (bulletTop < 0) {
         setBulletHidden(true);
@@ -86,7 +88,7 @@ export const useShotBullet = (): {
         setBulletTop(DEFAULT_SHOOTER_TOP - 60);
       }
 
-      return () => clearTimeout(timeout);
+      // return () => clearTimeout(timeout);
     }
     return () => {};
   }, [bulletTop, bulletHidden]);

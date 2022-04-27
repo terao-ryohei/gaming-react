@@ -22,28 +22,29 @@ export const useMoveShooter = (): { shooterLeft: number; shootPos: number } => {
    */
   const moveShooter = useCallback((event: KeyboardEvent) => {
     // 指定のキー押下かつ、現在位置が画面端でなければ、自機の座標を変更する
-    if (event.code === 'ArrowLeft') {
-      setShooterLeft((current) => {
-        if (current > (window.innerWidth - FIELD_SIZE) / 2) {
-          if (shootFlag.current) {
-            shootPos.current = current - SHOOTER_MOVE_RANGE;
-          }
-          return current - SHOOTER_MOVE_RANGE;
-        }
-        return (window.innerWidth - FIELD_SIZE) / 2;
-      });
-    }
-    if (event.code === 'ArrowRight') {
-      setShooterLeft((current) => {
-        if (current < (window.innerWidth + FIELD_SIZE) / 2 - 50) {
-          if (shootFlag.current) {
-            shootPos.current = current + SHOOTER_MOVE_RANGE;
-          }
-          return current + SHOOTER_MOVE_RANGE;
-        }
-        return (window.innerWidth + FIELD_SIZE) / 2 - 50;
-      });
-    }
+    // TODO: 3. 自機を動かす
+    // if (event.code === 'ArrowLeft') {
+    //   setShooterLeft((current) => {
+    //     if (current > (window.innerWidth - FIELD_SIZE) / 2) {
+    //       if (shootFlag.current) {
+    //         shootPos.current = current - SHOOTER_MOVE_RANGE;
+    //       }
+    //       return current - SHOOTER_MOVE_RANGE;
+    //     }
+    //     return (window.innerWidth - FIELD_SIZE) / 2;
+    //   });
+    // }
+    // if (event.code === 'ArrowRight') {
+    //   setShooterLeft((current) => {
+    //     if (current < (window.innerWidth + FIELD_SIZE) / 2 - 50) {
+    //       if (shootFlag.current) {
+    //         shootPos.current = current + SHOOTER_MOVE_RANGE;
+    //       }
+    //       return current + SHOOTER_MOVE_RANGE;
+    //     }
+    //     return (window.innerWidth + FIELD_SIZE) / 2 - 50;
+    //   });
+    // }
   }, []);
 
   /**

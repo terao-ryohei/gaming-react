@@ -32,18 +32,19 @@ export const useDestroy: () => {
   useEffect(() => {
     // 敵機の数分ループ処理を行い、衝突判定を行う
     enemyTop.forEach((top: number, topIndex: number) => {
-      enemyLeft.forEach((left: number, leftIndex: number) => {
-        if (left - 50 < shootPos && shootPos < left + 25) {
-          if (bulletTop < top && aliveEnemy.current[topIndex][leftIndex]) {
-            aliveEnemy.current[topIndex][leftIndex] = false;
-          }
-        }
-      });
-
+      // TODO: 5. 衝突判定を作る
+      // enemyLeft.forEach((left: number, leftIndex: number) => {
+      //   if (left - 50 < shootPos && shootPos < left + 25) {
+      //     if (bulletTop < top && aliveEnemy.current[topIndex][leftIndex]) {
+      //       aliveEnemy.current[topIndex][leftIndex] = false;
+      //     }
+      //   }
+      // });
+      // TODO: 6-1. クリア判定を作る
       // クリアフラグをオンにする
-      setClearFlag(
-        aliveEnemy.current[topIndex].every((value) => value === false) === true
-      );
+      // setClearFlag(
+      //   aliveEnemy.current[topIndex].every((value) => value === false) === true
+      // );
     });
   }, [shootPos, bulletTop, aliveEnemy]);
 
@@ -52,9 +53,8 @@ export const useDestroy: () => {
    * クリアフラグがオンになった時、クリア画面に遷移する
    */
   useEffect(() => {
-    if (clearFlag) {
-      navigate(CLEAR_URL);
-    }
+    // TODO: 6-2. クリア判定を作る
+    //   navigate(CLEAR_URL);
   }, [clearFlag]);
 
   return { aliveEnemy: aliveEnemy.current };

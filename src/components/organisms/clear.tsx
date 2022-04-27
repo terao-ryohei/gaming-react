@@ -1,6 +1,5 @@
 import React from 'react';
 
-import BG from '../../assets/bg.jpg';
 import { BUTTON_TEXT, TITLE_TEXT } from '../../constants/clear-page';
 import { TITLE_URL } from '../../constants/page-url';
 import { styled } from '../../stithces.config';
@@ -13,8 +12,6 @@ const BackGround = styled('div', {
   flexDirection: 'column',
   width: '100vw',
   height: '100vh',
-  backgroundImage: `url(${BG})`,
-  backgroundSize: 'cover',
 });
 
 /**
