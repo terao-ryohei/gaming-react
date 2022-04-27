@@ -19,6 +19,10 @@ const FieldWrap = styled(Row, {
   justifyContent: 'center',
 });
 
+/**
+ * ステージコンポーネント
+ *  @returns {React.MemoExoticComponent<() => JSX.Element>} メモ化された描画するコンポーネント
+ */
 export const Field: React.MemoExoticComponent<() => JSX.Element> = React.memo(
   () => (
     <FieldWrap>

@@ -17,6 +17,10 @@ const BackGround = styled('div', {
   backgroundSize: 'cover',
 });
 
+/**
+ * クリアページのレイアウト
+ * @returns {React.MemoExoticComponent<() => JSX.Element>} メモ化された描画するコンポーネント
+ */
 export const Clear: React.MemoExoticComponent<() => JSX.Element> = React.memo(
   () => (
     <BackGround className="Title">

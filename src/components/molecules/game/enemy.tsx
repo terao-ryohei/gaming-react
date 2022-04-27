@@ -30,13 +30,20 @@ const DestroyImg = styled('img', {
   objectPosition: '-463px -332px',
 });
 
+// 敵機テキストコンポーネントのProps
 type EnemyProps = { alive: boolean; top: number; left: number };
 
+/**
+ * 敵機コンポーネント
+ *  @returns {React.MemoExoticComponent<(props: EnemyProps) => JSX.Element>} メモ化された描画するコンポーネント
+ */
 export const Enemy: React.MemoExoticComponent<
   (props: EnemyProps) => JSX.Element
 > = React.memo((props: EnemyProps) => {
+  // propsを分割代入
   const { alive, top, left } = props;
 
+  // 生存フラグによって表示画像を切り替え
   return (
     <div>
       {alive ? (

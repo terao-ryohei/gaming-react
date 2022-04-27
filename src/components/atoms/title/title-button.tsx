@@ -46,11 +46,17 @@ const LinkWrap = styled(Row, {
   marginTop: '60px',
 });
 
+// タイトル用ボタンリンクコンポーネントのprops
 type TitleButtonProps = { to: string; text: string };
 
+/**
+ * タイトル用ボタンリンクコンポーネント
+ *  @returns {React.MemoExoticComponent<(props: TitleButtonProps) => JSX.Element>} メモ化された描画するコンポーネント
+ */
 export const TitleButton: React.MemoExoticComponent<
   (props: TitleButtonProps) => JSX.Element
 > = React.memo((props: TitleButtonProps) => {
+  // propsを分割代入
   const { to, text } = props;
 
   return (

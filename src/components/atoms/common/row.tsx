@@ -12,14 +12,20 @@ const StyledRow = styled('div', {
   },
 });
 
+// デザインブロックコンポーネントのProps
 type RowProps = {
   children: React.ReactNode;
   className?: string;
   position?: 'absolute' | 'relative' | undefined;
 };
 
+/**
+ * デザインブロックコンポーネント
+ *  @returns {React.MemoExoticComponent<(props: RowProps) => JSX.Element>} メモ化された描画するコンポーネント
+ */
 export const Row: React.MemoExoticComponent<(props: RowProps) => JSX.Element> =
   React.memo((props: RowProps) => {
+    // propsを分割代入
     const { position, children, className } = props;
 
     return (

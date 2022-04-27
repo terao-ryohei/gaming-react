@@ -37,13 +37,23 @@ const StyledRow = styled(Row, {
   },
 });
 
+// タイトルテキストデザインコンポーネントのProps
 type TitleTextsProps = { text: string };
 
+/**
+ * タイトルテキストデザインコンポーネント
+ *  @returns {React.MemoExoticComponent<(props: TitleTextsProps) => JSX.Element>} メモ化された描画するコンポーネント
+ */
 export const TitleTexts: React.MemoExoticComponent<
   (props: TitleTextsProps) => JSX.Element
 > = React.memo((props: TitleTextsProps) => {
+  // propsを分割代入
   const { text } = props;
 
+  /**
+   * テキスト描画
+   *  @returns {JSX.Element} メモ化された描画するテキスト
+   */
   const texts: JSX.Element = useMemo(
     () => (
       <StyledRow className="absolute">

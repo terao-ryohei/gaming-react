@@ -21,10 +21,17 @@ const BackGround = styled('div', {
   backgroundColor: '$black',
 });
 
+/**
+ * ゲームページのレイアウト
+ * @returns {React.MemoExoticComponent<() => JSX.Element>} メモ化された描画するコンポーネント
+ */
 export const Game: React.MemoExoticComponent<() => JSX.Element> = React.memo(
   () => {
+    // 自機移動処理結果の取得
     const { shooterLeft } = useMoveShooter();
+    // 自機弾動作処理結果の取得
     const { shootPos, bulletHidden, bulletTop } = useShotBullet();
+    // 敵機撃墜処理結果の取得
     const { aliveEnemy } = useDestroy();
 
     return (

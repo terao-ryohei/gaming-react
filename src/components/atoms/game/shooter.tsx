@@ -16,11 +16,17 @@ const Img = styled('img', {
   objectPosition: '-136px -470px',
 });
 
+// 自機コンポーネントのProps
 type ShooterProps = { top?: string; left?: string };
 
+/**
+ * 自機コンポーネント
+ *  @returns {React.MemoExoticComponent<(props: ShooterProps) => JSX.Element>} メモ化された描画するコンポーネント
+ */
 export const Shooter: React.MemoExoticComponent<
   (props: ShooterProps) => JSX.Element
 > = React.memo((props: ShooterProps) => {
+  // propsを分割代入
   const { top, left } = props;
 
   return (

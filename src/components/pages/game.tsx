@@ -6,7 +6,11 @@ import { Game } from '../organisms/game';
 
 const View = styled('div', {});
 
-export const GamePage: () => JSX.Element = () => (
+/**
+ * ゲームページコンポーネント
+ * @returns {JSX.Element} 描画するコンポーネント
+ */
+export const GamePage = (): JSX.Element => (
   <View style={{ minWidth: `${FIELD_SIZE}px` }}>
     <Game />
   </View>
