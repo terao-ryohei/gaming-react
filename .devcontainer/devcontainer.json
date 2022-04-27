@@ -1,0 +1,49 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.224.3/containers/typescript-node
+{
+  "name": "gaming-react",
+  "build": {
+    "dockerfile": "Dockerfile",
+    // Update 'VARIANT' to pick a Node version: 16, 14, 12.
+    // Append -bullseye or -buster to pin to an OS version.
+    // Use -bullseye variants on local on arm64/Apple Silicon.
+    "args": {
+      "VARIANT": "16-bullseye"
+    }
+  },
+  "runArgs": ["--name", "vsc-gaming-react-container"],
+
+  // Set *default* container specific settings.json values on container create.
+  "settings": {
+    "editor.formatOnSave": true, // <-- prettierで整形
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true // <-- eslintでリント
+    },
+    // デフォルトフォーマッタをprettierに
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+
+  // Add the IDs of extensions you want installed when the container is created.
+  "extensions": [
+    "coenraads.bracket-pair-colorizer-2",
+    "dsznajder.es7-react-js-snippets",
+    "ms-vscode-remote.remote-containers",
+    "ms-azuretools.vscode-docker",
+    "eamodio.gitlens",
+    "ecmel.vscode-html-css",
+    "eg2.vscode-npm-script",
+    "esbenp.prettier-vscode",
+    "gruntfuggly.todo-tree",
+    "shardulm94.trailing-spaces",
+    "visualstudioexptteam.vscodeintel",
+    "tabnine.tabnine-vscode",
+    "dbaeumer.vscode-eslint"
+  ],
+
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  "forwardPorts": [3000],
+
+  // Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+  "remoteUser": "node"
+}
